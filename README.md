@@ -10,3 +10,6 @@ https://github.com/miguelgrinberg/flasky.
 
 ## Activity 1.2: Example 2-2
 ![alt text](2-2.png)
+
+## Activity 1.3: Finished Chapter 3 Example
+![alt text](activity_1-3.png)
