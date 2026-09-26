@@ -7,3 +7,6 @@ https://github.com/miguelgrinberg/flasky.
 
 ## Activity 1.2: Example 2-1
 ![alt text](2-1.png)
+
+## Activity 1.2: Example 2-2
+![alt text](2-2.png)
