@@ -10,7 +10,7 @@ from wtforms.validators import DataRequired, Email
 # make form 
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
-    #email = StringField('What is your email?', validators=[DataRequired(), Email()]) # to verify email format
+    email = StringField('What is your email?', validators=[DataRequired(), Email()]) # to verify email format
     submit = SubmitField('Submit')
 
 # make and connect flask app to bootstrap 
@@ -34,8 +34,9 @@ def index():
                 and session.get('email') != form.email.data:
             flash('Looks like you have changed your email!')
 
-        # save the new name
+        # save the new name/email
         session['name'] = form.name.data
+        session['email'] = form.email.data
 
         # check for valid email
         if '@mail.utoronto.ca' in form.email.data.lower():
