@@ -12,7 +12,7 @@ https://github.com/miguelgrinberg/flasky.
 ![alt text](2-2.png)
 
 ## Activity 1.3: Finished Chapter 3 Example
-![alt text](activity_1-3.png)
+![alt text](1-3.png)
 ![alt text](1-3-commit.png)
 
 ## Activity 1.4: Part 1
@@ -28,5 +28,5 @@ https://github.com/miguelgrinberg/flasky.
 ![alt text](activity_1-4-4.png)
 
 ## Activity 1.4: Part 5
-![alt text](activity_1-4-5.png)
+![alt text](-5.png)
 ![alt text](1-4-commit.png)
