@@ -29,3 +29,4 @@ https://github.com/miguelgrinberg/flasky.
 
 ## Activity 1.4: Part 5
 ![alt text](activity_1-4-5.png)
+![alt text](1-4-commit.png)
