@@ -15,4 +15,10 @@ https://github.com/miguelgrinberg/flasky.
 ![alt text](activity_1-3.png)
 
 ## Activity 1.4: Part 1
-![alt text](activity_1-4-1.png)
+![alt text](1-4-1.png)
+
+## Activity 1.4: Part 2
+![alt text](activity_1-4-2.png)
+
+## Activity 1.4: Part 3
+![alt text](activity_1-4-3.png)

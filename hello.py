@@ -5,11 +5,12 @@ from flask_bootstrap import Bootstrap # to style HTML files
 # for forms
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, Email
 
 # make form 
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
+    #email = StringField('What is your email?', validators=[DataRequired(), Email()]) # to verify email format
     submit = SubmitField('Submit')
 
 # make and connect flask app to bootstrap 
@@ -22,9 +23,28 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 def index():
     form = NameForm()
     if form.validate_on_submit(): # check if form valid
-        old_name = session.get('name')
-        if old_name is not None and old_name != form.name.data:
+        ## yellow boxes for name and email if user submits diff values
+        # check if name changed from prev submission
+        if session.get('name') is not None \
+                and session.get('name') != form.name.data:
             flash('Looks like you have changed your name!')
+
+        # check if the email changed from prev submission
+        if session.get('email') is not None \
+                and session.get('email') != form.email.data:
+            flash('Looks like you have changed your email!')
+
+        # save the new name
         session['name'] = form.name.data
+
+        # check for valid email
+        if '@mail.utoronto.ca' in form.email.data.lower():
+            # valid UofT email            
+            session['email'] = form.email.data
+            session['valid_email'] = True
+        else:
+            # not a UofT email
+            session['email'] = form.email.data
+            session['valid_email'] = False
         return redirect(url_for('index'))
-    return render_template('index.html', form=form, name = session.get('name'))
+    return render_template('index.html', form=form, name = session.get('name'), email = session.get('email'))
