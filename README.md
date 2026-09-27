@@ -6,27 +6,27 @@ https://github.com/miguelgrinberg/flasky.
 
 
 ## Activity 1.2: Example 2-1
-![alt text](2-1.png)
+![alt text](imgs/2-1.png)
 
 ## Activity 1.2: Example 2-2
-![alt text](2-2.png)
+![alt text](imgs/2-2.png)
 
 ## Activity 1.3: Finished Chapter 3 Example
-![alt text](1-3.png)
-![alt text](1-3-commit.png)
+![alt text](imgs/1-3.png)
+![alt text](imgs/1-3-commit.png)
 
 ## Activity 1.4: Part 1
-![alt text](1-4-1.png)
+![alt text](imgs/1-4-1.png)
 
 ## Activity 1.4: Part 2
-![alt text](activity_1-4-2.png)
+![alt text](imgs/activity_1-4-2.png)
 
 ## Activity 1.4: Part 3
-![alt text](activity_1-4-3.png)
+![alt text](imgs/activity_1-4-3.png)
 
 ## Activity 1.4: Part 4
-![alt text](activity_1-4-4.png)
+![alt text](imgs/activity_1-4-4.png)
 
 ## Activity 1.4: Part 5
-![alt text](1-5.png)
-![alt text](1-4.png)
+![alt text](imgs/1-5.png)
+![alt text](imgs/1-4.png)
