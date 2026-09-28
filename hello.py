@@ -45,9 +45,18 @@ def index():
         else:
             # not a UofT email
             session['valid_email'] = False
-        return redirect(url_for('index'))
+
+        # activity 2.5 part 1 - add if/else statement to redirect to chat page if valid email, else redirect to index page
+        if session['valid_email']:
+            return redirect(url_for('chat_page'))
+        else:
+            return redirect(url_for('index'))
+        
     return render_template('index.html', form=form, name = session.get('name'), email = session.get('email'), valid_email = session.get('valid_email')) # pass name/email to index.html
 
+@app.route('/chat', methods=['GET', 'POST'])
+def chat_page():
+    return render_template('chat.html', name = session.get('name'), email = session.get('email'), valid_email = session.get('valid_email')) # pass name/email to chat.html
 # run the Flask app
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

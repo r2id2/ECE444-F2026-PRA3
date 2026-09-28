@@ -37,3 +37,6 @@ https://github.com/miguelgrinberg/flasky.
  ## Activity 2.4:
 ![alt text](img/2-4.png)
 ![alt text](img/containers.png)
+
+ ## Activity 2.5: Part 1
+![alt text](img/2-5-1.png)
