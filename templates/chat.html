@@ -17,6 +17,12 @@
     <!-- send message -->
     <button type="button" onclick="sendMessage()">Send</button>
 
+    <br><br>
+
+    <a href="/logout">
+    <button type="button">Logout</button>
+</a>
+
     <!-- chatbot replies will appear here -->
     <p id="reply"></p>
 
@@ -49,7 +55,7 @@
             .then(data => {
                 // display chatbot reply
                 const botMessage = document.createElement("p");
-                botMessage.innerText = "Bot: " + data.reply;
+                botMessage.innerText = "Bot: " + data.reply;                
                 document.getElementById("chatHistory").appendChild(botMessage);
             });
 

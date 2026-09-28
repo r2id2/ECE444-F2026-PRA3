@@ -64,7 +64,7 @@ def chat_page():
 def chat():
     message = request.json["message"]
     # if user says their name, use session to remember
-    if "my name" in message.lower():
+    if "my name is" in message.lower():
         name = message.split("is", 1)[1].strip()
         session['remembered_name'] = name
         reply = "Nice to meet you, " + name + "!"
@@ -84,6 +84,11 @@ def chat():
 
     return {"reply": reply}
 
+# activity 2.5 part 4 - logout and clear session
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
 
 # run the Flask app
 if __name__ == '__main__':

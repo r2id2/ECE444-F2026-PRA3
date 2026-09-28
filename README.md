@@ -43,3 +43,8 @@ https://github.com/miguelgrinberg/flasky.
 
  ## Activity 2.5: Part 2-3
 ![alt text](img/2-5-3.png)
+
+ ## Activity 2.5: Part 4-5
+![alt text](img/2-5-5-before-logout.png)
+![alt text](img/after-logout.png)
+![alt text](img/confirm-no-remember.png)
