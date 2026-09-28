@@ -7,13 +7,55 @@
 <body>
     <h1>Chatbot - Let Me Help You!</h1>
 
+    <!-- conversation appears here -->
+    <div id="chatHistory"></div>
+    <br>
+
     <!-- user types a message -->
     <input type="text" id="message" placeholder="Enter a message">
 
     <!-- send message -->
-    <button>Send</button>
+    <button type="button" onclick="sendMessage()">Send</button>
 
     <!-- chatbot replies will appear here -->
     <p id="reply"></p>
+
+    <!-- LLM used to assist with message processing -->
+    <script>
+        function sendMessage() {
+            const message = document.getElementById("message").value;
+
+            // don't send empty messages
+            if (message.trim() === "") {
+                return;
+            }
+
+            // display user's message
+            const userMessage = document.createElement("p");
+            userMessage.innerText = "You: " + message;
+            document.getElementById("chatHistory").appendChild(userMessage);
+
+            // send message to Flask
+            fetch("/message", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // display chatbot reply
+                const botMessage = document.createElement("p");
+                botMessage.innerText = "Bot: " + data.reply;
+                document.getElementById("chatHistory").appendChild(botMessage);
+            });
+
+            // clear input
+            document.getElementById("message").value = "";
+        }
+    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 # import flask to create web app + other necessary modules
-from flask import Flask, render_template, session, redirect, url_for, flash 
+from flask import Flask, render_template, session, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap # to style HTML files
 
 # for forms
@@ -54,9 +54,37 @@ def index():
         
     return render_template('index.html', form=form, name = session.get('name'), email = session.get('email'), valid_email = session.get('valid_email')) # pass name/email to index.html
 
-@app.route('/chat', methods=['GET', 'POST'])
+# activity 2.5 part 1 - display chatbot page
+@app.route('/chat')
 def chat_page():
-    return render_template('chat.html', name = session.get('name'), email = session.get('email'), valid_email = session.get('valid_email')) # pass name/email to chat.html
+    return render_template('chat.html')
+
+# activity 2.5 part 2 - add route/remember to chatbot
+@app.route('/message', methods=['POST'])
+def chat():
+    message = request.json["message"]
+    # if user says their name, use session to remember
+    if "my name" in message.lower():
+        name = message.split("is", 1)[1].strip()
+        session['remembered_name'] = name
+        reply = "Nice to meet you, " + name + "!"
+
+    # if asked for name, use session to reply with remembered name
+    elif "what is my name" in message.lower():
+        if 'remembered_name' in session:
+            reply = "Your name is " + session['remembered_name'] + "."
+        else:
+            reply = "I don't know/remember your name yet. Please tell me your name first."
+
+    # extra cases
+    elif "hello" in message.lower():
+        reply = "Hello!"
+    else:
+        reply = "I don't understand."
+
+    return {"reply": reply}
+
+
 # run the Flask app
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
