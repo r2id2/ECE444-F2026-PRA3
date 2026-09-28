@@ -30,3 +30,10 @@ https://github.com/miguelgrinberg/flasky.
 ## Activity 1.4: Part 5
 ![alt text](img/1-5.png)
 ![alt text](img/1-4.png)
+
+## Activity 2.3:
+![alt text](img/2-3.png)
+
+ ## Activity 2.4:
+![alt text](img/2-4.png)
+![alt text](img/containers.png)

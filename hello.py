@@ -47,3 +47,7 @@ def index():
             session['valid_email'] = False
         return redirect(url_for('index'))
     return render_template('index.html', form=form, name = session.get('name'), email = session.get('email'), valid_email = session.get('valid_email')) # pass name/email to index.html
+
+# run the Flask app
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
